@@ -1,0 +1,21 @@
+{
+  "name": "crave",
+  "version": "1.0.0",
+  "description": "A simple app to track your cravings. Uses Vue.js and Bulma.",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "parcel src/index.html --open"
+  },
+  "author": "@kyleschaeffer",
+  "license": "MIT",
+  "dependencies": {
+    "vue": "^2.6.10"
+  },
+  "devDependencies": {
+    "@vue/component-compiler-utils": "^3.0.0",
+    "parcel-bundler": "^1.12.3",
+    "sass": "^1.20.1",
+    "vue-hot-reload-api": "^2.3.3",
+    "vue-template-compiler": "^2.6.10"
+  }
+}
