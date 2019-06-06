@@ -13,3 +13,24 @@
     }
   }
 }
+
+// Shrinky dink
+@keyframes shrinky-dink {
+  0% {
+    height: 45px;
+    overflow: hidden;
+    padding-bottom: 8px;
+    padding-top: 8px;
+  }
+
+  100% {
+    height: 0;
+    overflow: hidden;
+    padding-bottom: 0;
+    padding-top: 0;
+  }
+}
+
+.shrinky-dink {
+  animation: shrinky-dink .3s ease;
+}

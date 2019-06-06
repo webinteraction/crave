@@ -3,7 +3,13 @@
     <div
       v-for="(craving, i) in cravings"
       :key="i"
-      class="craving panel-block is-block"
+      :class="{
+        'craving': true,
+        'panel-block': true,
+        'is-block': true,
+        'shrinky-dink': shrinkingIndex === i,
+      }"
+      @animationend="remove(i)"
     >
       <div class="level">
         <div class="level-left">
@@ -13,7 +19,10 @@
         </div>
         <div class="level-right">
           <div class="craving-actions level-item">
-            <button class="button is-small is-info is-outlined" @click.prevent="remove(i)">
+            <button
+              class="button is-small is-info is-outlined"
+              @click.prevent="shrink(i)"
+            >
               <span class="icon is-small" aria-hidden="true">
                 <i class="fas fa-utensils"></i>
               </span>
@@ -57,6 +66,7 @@ export default {
         'Croissants 🥐',
       ],
       newCraving: '',
+      shrinkingIndex: undefined,
     }
   },
 
@@ -68,7 +78,13 @@ export default {
     },
 
     remove (i) {
+      if (this.shrinkingIndex !== i) return
       this.cravings.splice(i, 1)
+      this.shrinkingIndex = undefined
+    },
+
+    shrink (i) {
+      this.shrinkingIndex = i
     },
   },
 }
