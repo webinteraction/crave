@@ -1,0 +1,15 @@
+// Actions
+.craving-actions {
+  .action-label {
+    overflow: hidden;
+    transition: width .3s ease;
+    width: 0;
+  }
+
+  .button:hover,
+  .button:focus {
+    .action-label {
+      width: 5em;
+    }
+  }
+}
